@@ -2,7 +2,9 @@
 
  Little tutorial to easily and quickly learn Git and its commands in french
  
-_N.B. : J'utilise le terme Repository ou Repo pour dire Dépôt en français._
+_N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou Projet en français._
+
+- [Remote](https://help.github.com/articles/configuring-a-remote-for-a-fork/ "Remote")
 
 ## Sommaire
 
