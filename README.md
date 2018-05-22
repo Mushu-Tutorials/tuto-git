@@ -6,6 +6,11 @@ _N.B. : J'utilise le terme Repository ou Repo pour dire Dépôt en français._
 
 ## Sommaire
 
+- [Installation](#installation)
+- [Les hébergeurs git](#les-hébergeurs-git)
+- [](#)
+- [](#)
+- [](#)
 - [](#)
 
 ## Installation
