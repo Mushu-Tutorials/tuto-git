@@ -4,7 +4,7 @@
  
 _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou Projet en français._
 
-- [Remote](https://help.github.com/articles/configuring-a-remote-for-a-fork/ "Remote")
+- [Remote GitHub](https://help.github.com/articles/configuring-a-remote-for-a-fork/ "Remote GitHub") et [Syncing Atlassian](https://www.atlassian.com/git/tutorials/syncing "Syncing Atlassian")
 
 ## Sommaire
 
