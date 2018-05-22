@@ -14,6 +14,8 @@ _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou
 - [Fork (ou Fourcher)](#fork-ou-Fourcher)
 - [](#)
 - [](#)
+- [Lexique](#lexique)
+- [Sources](#source)
 
 ## Installation
 
