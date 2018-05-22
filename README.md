@@ -44,6 +44,15 @@ Intégration continue | | |
  - Stockage des fichiers dans la pile de modification : `git commit -am "Mon message que le commit effectué`
  - Envoi de la pile de modification sur le repo hébergeur : `git push`
 
+## Fork (ou Fourcher)
+
+![Fork logo](https://upload.wikimedia.org/wikipedia/commons/3/38/GitHub_Fork_Button.png "Fork logo")
+
+Le __Fork__ est un principe qui permet de _copier_ le projet d'une personne sur l'hébergeur via le bouton `__Fork__`
+
+### Mettre à jour le projet Forked
+
+
 
 ## Lexique
 
