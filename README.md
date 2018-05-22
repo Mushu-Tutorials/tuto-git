@@ -33,7 +33,7 @@ Une petite liste des hébergeurs les plus connus :
 --- | :---: | --- | :---:
 Repo public | Gratuit | Gratuit |
 Repo privé | Payant | Gratuit |
-Intégration continue | | |
+Intégration continue | [Travis CI](https://travis-ci.org/ "Travis CI") `.travis.yml` | GitLab CI `.gitlab-ci.yml` |
  | | |
  
  ## Les commandes générales
@@ -53,12 +53,21 @@ Intégration continue | | |
 
 ![Fork logo](https://upload.wikimedia.org/wikipedia/commons/3/38/GitHub_Fork_Button.png "Fork logo")
 
-Le __Fork__ est un principe qui permet de _copier_ le projet d'une personne sur l'hébergeur via le bouton `__Fork__`
+Le __Fork__ est un principe qui permet de _copier_ le projet d'une personne sur l'hébergeur via le bouton `__Fork__`.
+
+- [Doc GitHub Fork](https://help.github.com/articles/fork-a-repo/)
+- [Doc GitHub Sync Fork](https://help.github.com/articles/syncing-a-fork/)
 
 ### Mettre à jour le projet Forked
 
-
+- Cloner le repository forked en local : `git fetch upstream`
 
 ## Lexique
 
-- Tracking : Lors de la créationd'un fichier dans le projet, ce dernier n'est pas _track_. C'est à dire que lors du commit, il ne sera pas inclut puis envoyé. Pour commit un fichier/dossier, ce dernier doit être _track_.
+- Tracking : lors de la créationd'un fichier dans le projet, ce dernier n'est pas _track_. C'est à dire que lors du commit, il ne sera pas inclut puis envoyé. Pour commit un fichier/dossier, ce dernier doit être _track_.
+- Remote : traduit par _distant_. Il fait référence le plus souvent aux projets hébergés. Le projet en local est considéré comme le projet d'origine et les projets hébergés comme les distants.
+- Upstream : dénommination du projet hébergé d'origine, le plus souvent le projet d'origine que l'on a fork. Généralement on __Pull__ de l'upstream et on __Push__ sur le origin (Projet d'origine : upstream | Projet forké : origin).
+
+## Sources
+
+- [Documentation GitHub](https://help.github.com/ "Documentation GitHub")
