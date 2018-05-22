@@ -69,6 +69,7 @@ Le __Fork__ est un principe qui permet de _copier_ le projet d'une personne sur 
 - Tracking : lors de la créationd'un fichier dans le projet, ce dernier n'est pas _track_. C'est à dire que lors du commit, il ne sera pas inclut puis envoyé. Pour commit un fichier/dossier, ce dernier doit être _track_.
 - Remote : traduit par _distant_. Il fait référence le plus souvent aux projets hébergés. Le projet en local est considéré comme le projet d'origine et les projets hébergés comme les distants.
 - Upstream : dénommination du projet hébergé d'origine, le plus souvent le projet d'origine que l'on a fork. Généralement on __Pull__ de l'upstream et on __Push__ sur le origin (Projet d'origine : upstream | Projet forké : origin).
+- Fetch : permet de montrer les commits qui ont été fait depuis le dernier fetch du repository.
 
 ## Sources
 
