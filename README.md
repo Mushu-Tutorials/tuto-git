@@ -8,7 +8,7 @@ _N.B. : J'utilise le terme Repository ou Repo pour dire Dépôt en français._
 
 - [Installation](#installation)
 - [Les hébergeurs git](#les-hébergeurs-git)
-- [](#)
+- [Les commandes générales](#les-commandes-générales)
 - [](#)
 - [](#)
 - [](#)
@@ -36,7 +36,7 @@ Repo privé | Payant | Gratuit |
 Intégration continue | | |
  | | |
  
- ## Les commandes
+ ## Les commandes générales
  
  ### Création d'un projet
  
