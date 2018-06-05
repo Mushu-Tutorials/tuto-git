@@ -64,6 +64,7 @@ Le __Fork__ est un principe qui permet de _copier_ le projet d'une personne sur 
 
 ### Mettre à jour le projet Forked
 
+- Cloner le repository forked en local : `git clone MonRepoACloner.com`
 - Cloner le repository forked en local : `git fetch upstream`
 
 ## Lexique
