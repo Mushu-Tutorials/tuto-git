@@ -66,6 +66,15 @@ Le __Fork__ est un principe qui permet de _copier_ le projet d'une personne sur 
 
 - Cloner le repository forked en local : `git clone MonRepoACloner.com`
 - Cloner le repository forked en local : `git fetch upstream`
+- 
+- `git clone MonRepoForked.com`
+- `git remote -v	// pour voir les différents remotes associés au projet`
+- `git remote add upstream LienDuRepoForked.com	// upstream ou tout autre nom pour de projet remote`
+- `git remote add gitlab LienDeMonRepoGitLab.com	// gitlab = nom de mon remote sur gitlab`
+- `git checkout master`
+- `git merge upstream/master`
+- `git push origin		// pour push sur le repo remote origin GitHub`
+- `git push gitlab		// pour push sur le remote gitlab sur GitLab`
 
 ## Lexique
 
