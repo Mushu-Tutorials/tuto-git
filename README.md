@@ -42,16 +42,23 @@ Intégration continue | [Travis CI](https://travis-ci.org/ "Travis CI") `.travis
  
  ## Les commandes générales
  
+ ### Configuratin des paramètres de git
+ 
+`--global` permet d'étendre les paramètres à __tous les dépôts__ git de l'utilisateur, sans le paramètre n'affectera que le dossier où l'on se situe.
+ 
+- Ajout du nom associé à l'hébergeur git utilisé : `git config --global user.name "MonNom"`
+- Ajout du mail associé à l'hébergeur git utilisé : `git config --global user.email "mon.mail@moi.com"`
+- __Push__ toutes les branches ou une seule :
+  - Toutes les branches : `git config --global push.default matching`
+  - Seuelement la branche courrante : `git config --global push.default simple`
+ 
  ### Création d'un projet
  
- Les commandes sont à réaliser dans le dossier du projet que vous souhaitez héberger et versionner.
- - Initialisation d'un projet, dans le dossier concerné : `git init` qui créera un dossier .git
- - Configuration des paramètres de git (le --global permet d'étendre ces paramètres sur tous les repo git de l'utilisateur, sans cela n'affectera que le dossier où l'on se situe):
-   - Ajout du nom associé à l'hébergeur git utilisé : `git config --global user.name "MonNom"`
-   - Ajout du mail associé à l'hébergeur git utilisé : `git config --global user.email "mon.mail@moi.com"`
- - Ajout des fichiers du projet au [tracking*](#lexique) : `git add .`
- - Stockage des fichiers dans la pile de modification : `git commit -am "Mon message que le commit effectué`
- - Envoi de la pile de modification sur le repo hébergeur : `git push`
+ Les commandes sont à réaliser dans le dossier du projet que vous souhaitez héberger et versionner.  
+- Initialisation d'un projet, dans le dossier concerné : `git init` qui créera un dossier .git
+- Ajout des fichiers du projet au [tracking*](#lexique) : `git add .`
+- Stockage des fichiers dans la pile de modification : `git commit -am "Mon message que le commit effectué`
+- Envoi de la pile de modification sur le repo hébergeur : `git push`
 
 ## Fork (ou Fourcher)
 
