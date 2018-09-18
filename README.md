@@ -11,6 +11,7 @@ _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou
 - [Installation](#installation)
 - [Les hébergeurs git](#les-hébergeurs-git)
 - [Les commandes générales](#les-commandes-générales)
+- [Le .gitignore](#le_.gitignore)
 - [Fork (ou Fourcher)](#fork-ou-Fourcher)
 - [](#)
 - [](#)
@@ -59,6 +60,10 @@ Intégration continue | [Travis CI](https://travis-ci.org/ "Travis CI") `.travis
 - Ajout des fichiers du projet au [tracking*](#lexique) : `git add .`
 - Stockage des fichiers dans la pile de modification : `git commit -am "Mon message que le commit effectué`
 - Envoi de la pile de modification sur le repo hébergeur : `git push`
+
+## Le .gitignore
+
+Le fichier `.gitignore` permet de ne pas 
 
 ## Fork (ou Fourcher)
 
