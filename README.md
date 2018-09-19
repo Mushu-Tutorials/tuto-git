@@ -98,32 +98,6 @@ MonIDE/
 # On ajoute une étoile au chemin du dossier
 Test/*
 ```
-test
-```
-# Pour ignorer un fichier
-.env
-troll.html
-
-# Pour ignorer le dossier en entier
-MonIDE/
-
-# Pour ignorer les fichiers de mon dossier
-# On ajoute une étoile au chemin du dossier
-Test/*
-```
-test
-```INI
-# Pour ignorer un fichier
-.env
-troll.html
-
-# Pour ignorer le dossier en entier
-MonIDE/
-
-# Pour ignorer les fichiers de mon dossier
-# On ajoute une étoile au chemin du dossier
-Test/*
-```
 
 ## Fork (ou Fourcher)
 
