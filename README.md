@@ -63,7 +63,41 @@ Intégration continue | [Travis CI](https://travis-ci.org/ "Travis CI") `.travis
 
 ## Le .gitignore
 
-Le fichier `.gitignore` permet de ne pas 
+Le fichier `.gitignore` permet de ne pas envoyer sur l'hébergeur les fichiers ou dossiers non souhaités, comme les dossiers des paramètres de l'IDE ou les fichiers contenant les variables d'environnement.  
+Pour commenter dans le .gitignore il faut ajouter un __#__ avant le commentaire.
+
+Prenons comme exemple cet arborescence :
+```
+|\index.html
+|\.env
+|\troll.html
+|
+|\classes
+| |\classe1.php
+| |\classe2.php
+|
+|\Test
+| |\test1.txt
+| |\test1.txt
+|
+|\MonIDE
+| |\ide.ide
+| |\settings.ide
+```
+
+Dans cet exemple voici comment configurer le `.gitignore`pour ne pas tracker et publier certains fichiers/dossiers :
+```
+# Pour ignorer un fichier
+.env
+troll.html
+
+# Pour ignorer le dossier en entier
+MonIDE/
+
+# Pour ignorer les fichiers de mon dossier
+# On ajoute une étoile au chemin du dossier
+Test/*
+```
 
 ## Fork (ou Fourcher)
 
