@@ -68,21 +68,21 @@ Pour commenter dans le .gitignore il faut ajouter un __#__ avant le commentaire.
 
 Prenons comme exemple cet arborescence :
 ```
-|\index.html
-|\.env
-|\troll.html
+├─ index.html
+├─ .env
+├─ troll.html
+│
+├─ classes
+|  ├─ classe1.php
+|  └─ classe2.php
 |
-|\classes
-| |\classe1.php
-| |\classe2.php
+├─ Test
+|  ├─ test1.txt
+|  └─ test1.txt
 |
-|\Test
-| |\test1.txt
-| |\test1.txt
-|
-|\MonIDE
-| |\ide.ide
-| |\settings.ide
+└─ MonIDE
+   ├─ ide.ide
+   └─ settings.ide
 ```
 
 Dans cet exemple voici comment configurer le `.gitignore`pour ne pas tracker et publier certains fichiers/dossiers :
