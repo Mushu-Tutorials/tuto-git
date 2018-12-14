@@ -98,11 +98,11 @@ Test/*
 
 ### Purger les fichiers et dossiers déjà hébergés mais à ignorer dans le .gitignore
 
-Pour supprimer un fichier/dossier qui est host sur l'hébergeur et le garder en local :
+Pour supprimer et ignorer un fichier/dossier qui est déjà host sur l'hébergeur et le garder en local :
 - Modifier le .gitignore pour prendre en compte le fidhier/dossier à ignorer
-- Supprimer le fichier distant sur le remote (vider le cache git) : `git rm -r --cached nom-du-dossier-ou-fichier`
+- Supprimer le fichier distant sur le remote (vider le cache git) : `git rm -r --cached .` ou `git rm -r --cached nom-du-dossier-ou-fichier`
   - `-r` : recursive, pour spécifier de supprimer les sous-dossiers/fichiers
-- Commit les changements : `git commit -am 'Suppression des dossier à ignorer : "nom-du-dossier-ou-fichier"'`
+- Commit les changements : `git commit -am 'Suppression des fichiers du .gitignore'`
 - Push sur le repo : `git push origin master`
 
 ## Fork (ou Fourcher)
