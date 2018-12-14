@@ -11,7 +11,7 @@ _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou
 - [Installation](#installation)
 - [Les hébergeurs git](#les-hébergeurs-git)
 - [Les commandes générales](#les-commandes-générales)
-- [Le .gitignore](#le_.gitignore)
+- [Le .gitignore](#le-gitignore)
 - [Fork (ou Fourcher)](#fork-ou-Fourcher)
 - [](#)
 - [](#)
