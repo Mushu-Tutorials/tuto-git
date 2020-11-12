@@ -20,7 +20,7 @@ _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou
 - [](#)
 - [](#)
 - [Lexique](#lexique)
-- [Sources](#source)
+- [Sources](#sources)
 
 ## Installation
 
