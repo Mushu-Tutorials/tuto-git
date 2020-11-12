@@ -10,12 +10,12 @@ _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou
 
 - [Installation](#installation)
 - [Les hébergeurs git](#les-hébergeurs-git)
-  - [Comparatif](#comparatif
+  - [Comparatif](#comparatif-a-venir)
 - [Les commandes générales](#les-commandes-générales)
   - [Les commandes utiles](#les-commandes-utiles)
-  - [Configuration des paramètres de git](#configuration-des-parametres-de-git)
+  - [Configuration des paramètres de git](#configuration-des-paramètres-de-git)
 - [Le .gitignore](#le-gitignore)
-- [Fork (ou Fourcher)](#fork-ou-Fourcher)
+- [Fork (ou Fourcher)](#fork-ou-fourcher)
 - [Annuler un merge sur le Remote](#annuler-un-merge-sur-le-remote)
 - [](#)
 - [](#)
@@ -47,9 +47,21 @@ Intégration continue | [Travis CI](https://travis-ci.org/ "Travis CI") `.travis
  
  ## Les commandes générales
  
- ### Commandes utiles
+ ### Les commandes utiles
  
+ - Pour voir en CLI l'arborescence des commits ([source](https://stackoverflow.com/a/7623363/7998119)) : `git log --all --graph --decorate --oneline --simplify-by-decoration`
  
+ Exemple :
+ 
+ ```git
+* ae038ad (HEAD, branch2-1) add content to tmp1
+| * f5a0029 (branch2-1-1) Add another
+|/  
+* 3e56666 (branch1) Second wave of commits
+| * 6c9af2a (branch1-2) add thing
+|/  
+* bfcf30a (master) commit 1
+ ```
  
  ### Configuration des paramètres de git
  
@@ -138,9 +150,15 @@ Le __Fork__ est un principe qui permet de _copier_ le projet d'une personne sur 
 
 ## Annuler un merge sur le Remote
 
-Si un merge a été effectué sur une branche Remote (hébergée sur la plateforme en ligne) et que l'on souhaite revenir en arrière (au dernier commit de cette branche remote ou un autre), voici la procédure :
+Si un merge a été effectué sur une branche Remote (hébergée sur la plateforme en ligne) et que l'on souhaite revenir en arrière (au dernier commit de cette branche remote ou un autre commit), voici la procédure :
 
 ```shell
+# Afin de voir l'arborescence
+git log --all --graph --decorate --oneline --simplify-by-decoration
+# Revenir au commit souhaité en local
+git reset --hard <numero commit>
+# Appliquer les changements au dépôt distant (origin)
+git push origin HEAD --force
 ```
 
 ## Lexique
