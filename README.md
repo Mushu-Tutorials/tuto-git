@@ -10,9 +10,13 @@ _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou
 
 - [Installation](#installation)
 - [Les hébergeurs git](#les-hébergeurs-git)
+  - [Comparatif](#comparatif
 - [Les commandes générales](#les-commandes-générales)
+  - [Les commandes utiles](#les-commandes-utiles)
+  - [Configuration des paramètres de git](#configuration-des-parametres-de-git)
 - [Le .gitignore](#le-gitignore)
 - [Fork (ou Fourcher)](#fork-ou-Fourcher)
+- [Annuler un merge sur le Remote](#annuler-un-merge-sur-le-remote)
 - [](#)
 - [](#)
 - [Lexique](#lexique)
@@ -43,7 +47,11 @@ Intégration continue | [Travis CI](https://travis-ci.org/ "Travis CI") `.travis
  
  ## Les commandes générales
  
- ### Configuratin des paramètres de git
+ ### Commandes utiles
+ 
+ 
+ 
+ ### Configuration des paramètres de git
  
 `--global` permet d'étendre les paramètres à __tous les dépôts__ git de l'utilisateur, sans le paramètre n'affectera que le dossier où l'on se situe.
  
@@ -127,6 +135,13 @@ Le __Fork__ est un principe qui permet de _copier_ le projet d'une personne sur 
 - `git merge upstream/master`
 - `git push origin		// pour push sur le repo remote origin GitHub`
 - `git push gitlab		// pour push sur le remote gitlab sur GitLab`
+
+## Annuler un merge sur le Remote
+
+Si un merge a été effectué sur une branche Remote (hébergée sur la plateforme en ligne) et que l'on souhaite revenir en arrière (au dernier commit de cette branche remote ou un autre), voici la procédure :
+
+```shell
+```
 
 ## Lexique
 
