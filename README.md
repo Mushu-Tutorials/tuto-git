@@ -154,7 +154,7 @@ Le __Fork__ est un principe qui permet de _copier_ le projet d'une personne sur 
 
 [Source](https://nickymeuleman.netlify.app/blog/delete-git-branches "Supprimer des branches")
 
-- Créer des branches :
+Créer des branches :
 
 ```shell
 # Création d'une branche
@@ -165,7 +165,7 @@ git checkout <branch>
 git checkout -b <newBranch>
 ```
 
-- Lister des branches :
+Lister des branches :
 
 ```shell
 # Lister l'ensemble des branches en local
@@ -185,7 +185,7 @@ git branch -r --merged
 git branch -r --no-merged
 ```
 
-- Supprimer des branches :
+Supprimer des branches :
 
 ```shell
 ## En local
