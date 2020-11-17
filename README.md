@@ -17,6 +17,8 @@ _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou
 - [Le .gitignore](#le-gitignore)
 - [Fork (ou Fourcher)](#fork-ou-fourcher)
 - [Annuler un merge sur le Remote](#annuler-un-merge-sur-le-remote)
+- [Gestion des branches](#gestion-des-branches)
+  - [GitFlow](#gitflow)
 - [](#)
 - [](#)
 - [Lexique](#lexique)
@@ -147,6 +149,82 @@ Le __Fork__ est un principe qui permet de _copier_ le projet d'une personne sur 
 - `git merge upstream/master`
 - `git push origin		// pour push sur le repo remote origin GitHub`
 - `git push gitlab		// pour push sur le remote gitlab sur GitLab`
+
+## Gestion des branches
+
+[Source](https://nickymeuleman.netlify.app/blog/delete-git-branches "Supprimer des branches")
+
+- Créer des branches :
+
+```shell
+# Création d'une branche
+git branch -b <newBranch>
+# Changement de branche
+git checkout <branch>
+# Créer et aller directement sur la branche créée
+git checkout -b <newBranch>
+```
+
+- Lister des branches :
+
+```shell
+# Lister l'ensemble des branches en local
+git branch
+# Lister l'ensemble des branches en remote
+git branch -r
+# Lister l'ensemble des branches en local et en remote
+git branch -a
+
+# Lister l'ensemble des branches mergées
+git branch --merged
+# Lister l'ensemble des branches non-mergées
+git branch --no-merged
+# Lister l'ensemble des branches mergées en remote
+git branch -r --merged
+# Lister l'ensemble des branches non-mergées en remote
+git branch -r --no-merged
+```
+
+- Supprimer des branches :
+
+```shell
+## En local
+# Supprimer une branche mergée en local
+git branch -d <branch>
+# Supprimer une branche non-mergée en local
+git branch -D <branch>
+
+# Supprimer plusieurs branches en local
+#   - git branch --merged            Liste toutes les branches mergées (fonctionne avec --no-merged ou sans attribut)
+#   - egrep -v "(^\*|master|dev)"    Ecxlu les branches nommées "master" et "dev"
+#   - xargs git branch -d            Supprime toutes les branches git restantes
+git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
+git branch --no-merged | egrep -v "(^\*|master|dev)" | xargs git branch -D
+git branch | egrep -v "(^\*|master|dev)" | xargs git branch -D
+
+
+## En remote
+# Supprimer les branches qui ne sont plus trackées et qui n'ont plus de ref entre le remote et le local
+git fetch --prune
+git remote prune <remote> --dry-run (commande à tester voir si elle donne le même résultat que celle au-dessus)
+# Supprimer une branche en remote
+git push <remote> --delete <branch>
+
+# Supprimer plusieurs branches en remote
+#   - git branch -r --merged                 Liste toutes les branches mergées (fonctionne avec --no-merged ou sans attribut)
+#   - egrep -v "(^\*|master|dev)"            Ecxlu les branches nommées "master" et "dev"
+#   - sed 's/origin\///'                     Cette commande renvoie des chaînes de caractères de la forme "origin/<branch>". Cela permet de filtrer "origin/"
+#   - xargs -n 1 git push origin --delete    Supprime toutes les branches git restantes
+git branch -r --merged | egrep -v "(^\*|master|dev)" | sed 's/origin\///' | xargs -n 1 git push origin --delete
+git branch -r --no-merged | egrep -v "(^\*|master|dev)" | sed 's/origin\///' | xargs -n 1 git push origin --delete
+git branch -r | egrep -v "(^\*|master|dev)" | sed 's/origin\///' | xargs -n 1 git push origin --delete
+```
+
+### GitFlow
+
+GitFlow est une philosophie de développement utilisée par beaucoup d'entreprises permettant de gérer la gestion Git d'un Repository de manière simplifiée. Les commandes sont harmonisées et abrégées permettant un gain de temps.
+
+- Installation : [ici](https://github.com/nvie/gitflow/wiki/Installation "Install GitFlow")
 
 ## Annuler un merge sur le Remote
 
