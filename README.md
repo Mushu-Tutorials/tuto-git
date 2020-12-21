@@ -19,7 +19,7 @@ _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou
 - [Annuler un merge sur le Remote](#annuler-un-merge-sur-le-remote)
 - [Gestion des branches](#gestion-des-branches)
   - [GitFlow](#gitflow)
-- [Génération d'un CHANGELOG](#génération-d-un-changelog)
+- [Génération d'un CHANGELOG](#génération-dun-changelog)
 - [](#)
 - [](#)
 - [Lexique](#lexique)
