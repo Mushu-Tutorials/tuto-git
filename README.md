@@ -19,6 +19,7 @@ _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou
 - [Annuler un merge sur le Remote](#annuler-un-merge-sur-le-remote)
 - [Gestion des branches](#gestion-des-branches)
   - [GitFlow](#gitflow)
+- [Génération d'un CHANGELOG](#génération-d-un-changelog)
 - [](#)
 - [](#)
 - [Lexique](#lexique)
@@ -238,6 +239,10 @@ git reset --hard <numero commit>
 # Appliquer les changements au dépôt distant (origin)
 git push origin HEAD --force
 ```
+
+## Génération d'un CHANGELOG
+
+Il est possible d'automatiser la génération d'un changelog grâce à un script Node ou d'autres outils en respectant des normes tel que [Conventionnal commits](https://www.conventionalcommits.org/ "Conventionnal commits"). Repository personnel sur le sujet disponible [ici](https://github.com/Mushu-Tutorials/tuto-git-changelogs "Automatic CHANGELOG update").
 
 ## Lexique
 
