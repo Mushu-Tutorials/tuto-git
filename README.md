@@ -296,15 +296,25 @@ It is not recommanded to do that because there is a difference in the `.git` par
 
 ### Update a project with submodules
 
-Configure git parameters for a better vizualisation `git config --global diff.submodule log`, it lists the commits when you execute `git diff`:
+1. Configure git parameters for a better vizualisation `git config --global diff.submodule log`, it lists the commits when you execute `git diff`:
+2. To add ou change a following branch fora submodule: `git submodule set-branch -b <branch> [path/to/submodule]`
+3. To push modifications for the parent folder, do as usual when you commit/push to remote.
 
 ```shell
+# 1. Git config parameters
 git diff
 git config --global diff.submodule log
 git diff
+
+# 2. Set the following branch for submodule
+git submodule set-branch -b <branch> [path/to/submodule]
+
+# 3. Push from the parent folder
+git add .
+git commit -am "My commit"
+git push
 ```
 
-To push modifications for the parent folder, do as usual when you commit/push to remote.
 
 #### Pull submodule
 
