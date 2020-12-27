@@ -91,7 +91,7 @@ Exemple :
 - **Push** toutes les branches ou une seule :
   - Toutes les branches : `git config --global push.default matching`
   - Seuelement la branche courrante : `git config --global push.default simple`
-- Ajout de la liste des commits des sous-modules quand on exécute la commande `git diff` dans le dossier parent d'un sous-module ([lien vers mon tuto](https://github.com/Mushu-Tutorials/tuto-git-submodule#update-the-project-with-submodules 'Submodules by MushuLeDragon')): `git config --global diff.submodule log`
+- Ajout de la liste des commits des submodules (sous-modules) quand on exécute la commande `git diff` dans le dossier parent d'un submodule ([Gestion des submodules](#gestion-des-submodules-en 'Submodules')): `git config --global diff.submodule log`
 
 ### Création d'un projet
 
@@ -285,6 +285,8 @@ git clone --recursive-submodule https://github.com/Mushu-Tutorials/tuto-git-subm
 
 ### Add an existing folder to submodule
 
+:warning::warning::warning: DEPRECATED :warning::warning::warning:
+
 It is not recommanded to do that because there is a difference in the `.git` parent folder with the two versions. See the thread [here](https://stackoverflow.com/a/59575778/7998119).
 
 ### Update a project with submodules
@@ -301,10 +303,17 @@ git diff
 
 ##### Best option
 
-Friom the parent folder:
+From the parent folder, you can update submodules folders:
 
 ```shell
 git submodule update --remote
+# Add options to the command to:
+# - Only update the submodule you want: git submodule update --remote <mySubmodule>
+
+# Save the tracked modifications in the parent folder
+git add .
+git commit -am "update submodules folders"
+git push
 ```
 
 ##### Second option
@@ -320,6 +329,11 @@ git merge # To pull modifications for this submodule (you have to push modificat
 cd ..
 git diff
 git diff --submodule
+
+# Save the tracked modifications in the parent folder
+git add .
+git commit -am "update submodules folders"
+git push
 ```
 
 #### Update the parent folder
