@@ -31,9 +31,8 @@ _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou
   - [Clone a repository that have submodules](#clone-a-repository-that-have-submodules)
   - [Add an existing folder to submodule](#add-an-existing-folder-to-submodule)
   - [Update a project with submodules](#update-a-project-with-submodules)
-    - [Update submodule](#update-submodule)
-    - [Update the parent folder](#update-the-parent-folder)
-    - [Update a child folder](#update-a-child-folder)
+    - [Pull submodule](#pull-submodule)
+    - [Push modifications for a child folder](#push-modifications-for-a-child-folder)
     - [Delete a submodule](#delete-a-submodule)
 - [Génération d'un CHANGELOG](#génération-dun-changelog)
 - [](#)
@@ -263,12 +262,18 @@ git push origin HEAD --force
 
 ## Gestion des submodules (en)
 
-Documentation [here](https://git-scm.com/book/fr/v2/Utilitaires-Git-Sous-modules).
+Documentation [here](https://git-scm.com/book/fr/v2/Utilitaires-Git-Sous-modules). An kind tutorial [here](https://www.vogella.com/tutorials/GitSubmodules/article.html) by *Vogella*.
 
 ### Create a submodule with a hosted repository
 
 ```shell
-git submodule add https://github.com/Mushu-Tutorials/tuto-git-submodule-child-1 # Name of the directory you want or leave empty by default
+git submodule add -b <branch> https://github.com/Mushu-Tutorials/tuto-git-submodule-child-1 <name_repository>
+# Options
+# -b <branch>: Branch you want to follow for this submodule
+# <name_repository>: Name of the directory you want or leave empty by default
+
+# To initialize submodule configuration
+git submodule init
 ```
 
 ### Clone a repository that have submodules
@@ -276,8 +281,8 @@ git submodule add https://github.com/Mushu-Tutorials/tuto-git-submodule-child-1 
 ```shell
 # Detailed method
 git clone https://github.com/Mushu-Tutorials/tuto-git-submodule
-git submodule update --init # Commande à tester
-git submodule update --init --recursive # Commande à tester
+git submodule update --init # Commande à tester # If no recursive submodules
+git submodule update --init --recursive # Commande à tester # If recursive submodules
 
 # Shorter method
 git clone --recursive-submodule https://github.com/Mushu-Tutorials/tuto-git-submodule # Commande à tester
@@ -299,13 +304,19 @@ git config --global diff.submodule log
 git diff
 ```
 
-#### Update submodule
+To push modifications for the parent folder, do as usual when you commit/push to remote.
+
+#### Pull submodule
 
 ##### Best option
 
 From the parent folder, you can update submodules folders:
 
 ```shell
+# Pull all changes in the repo including changes in the submodules
+git pull --recurse-submodules
+
+# Pull all changes for the submodules
 git submodule update --remote
 # Add options to the command to:
 # - Only update the submodule you want: git submodule update --remote <mySubmodule>
@@ -336,22 +347,16 @@ git commit -am "update submodules folders"
 git push
 ```
 
-#### Update the parent folder
+#### Push modifications for a child folder
 
-This is how to push modifications on the parent folder:
-
-```shell
-
-```
-
-#### Update a child folder
+Activate options of Git to show submodules modifications `git config status.submodulesummary 1`.
 
 This is how to push modifications on a child folder, from the parent folder:
 
 ```shell
 
 ```
-
+ 
 ### Delete a submodule
 
 [Here](https://stackoverflow.com/a/16162000/7998119) the procedure.
