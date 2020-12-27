@@ -315,7 +315,6 @@ git commit -am "My commit"
 git push
 ```
 
-
 #### Pull submodule
 
 ##### Best option
