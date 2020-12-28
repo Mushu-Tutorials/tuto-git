@@ -284,8 +284,8 @@ git clone --recursive https://github.com/Mushu-Tutorials/tuto-git-submodule
 
 # Detailed method
 git clone https://github.com/Mushu-Tutorials/tuto-git-submodule
-git submodule update --init # Commande à tester # If no recursive submodules
-git submodule update --init --recursive # Commande à tester # If recursive submodules
+git submodule update --init # If no recursive submodules
+git submodule update --init --recursive # If recursive submodules
 ```
 
 ### Add an existing folder to submodule
