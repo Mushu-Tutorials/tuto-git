@@ -363,7 +363,18 @@ Activate options of Git to show submodules modifications `git config status.subm
 This is how to push modifications on a child folder, from the parent folder:
 
 ```shell
+cd <path/to/submodule>
 
+# Do modifications in submodule and push to the submodule's hosted repository
+git add .
+git commit -am "make my modifications in submodule"
+git push origin HEAD:<name-of-remote-branch>
+
+# Push from the parent folder to update the new tracked commit
+cd ../<parent/folder>
+git add .
+git commit -am "update the submodule tracked folder from parent folder"
+git push
 ```
  
 ### Delete a submodule
