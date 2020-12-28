@@ -1,0 +1,8 @@
+[submodule "Child_1"]
+	path = Child_1
+	url = https://github.com/Mushu-Tutorials/tuto-git-submodule-child-1
+	branch = main
+[submodule "Child_2"]
+	path = Child_2
+	url = https://github.com/Mushu-Tutorials/tuto-git-submodule-child-2
+	branch = dev
