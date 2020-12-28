@@ -267,10 +267,10 @@ Documentation [here](https://git-scm.com/book/fr/v2/Utilitaires-Git-Sous-modules
 ### Create a submodule with a hosted repository
 
 ```shell
-git submodule add -b <branch> https://github.com/Mushu-Tutorials/tuto-git-submodule-child-1 <name_repository>
+git submodule add -b <branch> https://github.com/Mushu-Tutorials/tuto-git-submodule-child-1 <path/to/submodule>
 # Options
 # -b <branch>: Branch you want to follow for this submodule
-# <name_repository>: Name of the directory you want or leave empty by default
+# <path/to/submodule>: Name of the directory you want or leave empty by default
 
 # To initialize submodule configuration
 git submodule init
@@ -382,10 +382,10 @@ git push
 [Here](https://stackoverflow.com/a/16162000/7998119) the procedure.
 
 ```shell
-git submodule deinit Submodule_1
-git rm Submodule_1
-# Note: Submodule_1 (no trailing slash)
-rm -rf .git/modules/Submodule_1/
+git submodule deinit <path/to/submodule>
+git rm <path/to/submodule>
+# Note: <path/to/submodule> (no trailing slash)
+rm -rf .git/modules/<path/to/submodule>/
 ```
 
 ## Génération d'un CHANGELOG
