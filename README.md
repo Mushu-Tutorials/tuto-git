@@ -326,9 +326,9 @@ From the parent folder, you can update submodules folders:
 git pull --recurse-submodules
 
 # Pull all changes for the submodules
-git submodule update --remote
+git submodule update --remote <path/to/submodule>
 # Add options to the command to:
-# - Only update the submodule you want: git submodule update --remote <mySubmodule>
+# - Only update the submodule you want: git submodule update --remote <path/to/submodule>
 
 # Save the tracked modifications in the parent folder
 git add .
@@ -364,6 +364,10 @@ This is how to push modifications on a child folder, from the parent folder:
 
 ```shell
 cd <path/to/submodule>
+
+# Choose the branch to work to
+git checkout origin # For the origin/master branch
+git checkout <branch> # For a specific branch: <branch>
 
 # Do modifications in submodule and push to the submodule's hosted repository
 git add .
