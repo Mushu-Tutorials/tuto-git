@@ -244,6 +244,8 @@ git branch -r | egrep -v "(^\*|master|dev)" | sed 's/origin\///' | xargs -n 1 gi
 GitFlow est une philosophie de développement utilisée par beaucoup d'entreprises permettant de gérer la gestion Git d'un Repository de manière simplifiée. Les commandes sont harmonisées et abrégées permettant un gain de temps.
 
 - Installation : [ici](https://github.com/nvie/gitflow/wiki/Installation 'Install GitFlow')
+- Articles intéressants :
+  - [Tuto et explications](https://nvie.com/posts/a-successful-git-branching-model/)
 
 ## Annuler un merge sur le Remote
 
