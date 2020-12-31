@@ -246,7 +246,7 @@ GitFlow est une philosophie de développement utilisée par beaucoup d'entrepris
 - Installation : [ici](https://github.com/nvie/gitflow/wiki/Installation 'Install GitFlow')
 - Articles intéressants :
   - [Tuto et explications](https://nvie.com/posts/a-successful-git-branching-model/)
-
+  - [GitFlow cheatsheet](http://danielkummer.github.io/git-flow-cheatsheet/index.fr_FR.html)
 ## Annuler un merge sur le Remote
 
 Si un merge a été effectué sur une branche Remote (hébergée sur la plateforme en ligne) et que l'on souhaite revenir en arrière (au dernier commit de cette branche remote ou un autre commit), voici la procédure :
