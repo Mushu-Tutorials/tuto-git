@@ -396,10 +396,16 @@ git push
 [Here](https://stackoverflow.com/a/16162000/7998119) the procedure.
 
 ```shell
+# Delete the submodule
 git submodule deinit <path/to/submodule>
 git rm <path/to/submodule>
 # Note: <path/to/submodule> (no trailing slash)
 rm -rf .git/modules/<path/to/submodule>/
+
+# Update parent folder by pushing deletion to the remote
+git add .
+git commit -am "delete submodule folder + tracking"
+git push
 ```
 
 ## Génération d'un CHANGELOG
