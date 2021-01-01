@@ -2,3 +2,7 @@
 	path = Child_1
 	url = https://github.com/Mushu-Tutorials/tuto-git-submodule-child-1
 	branch = main
+[submodule "tuto-git-changelogs"]
+	path = tuto-git-changelogs
+	url = https://github.com/Mushu-Tutorials/tuto-git-changelogs
+	branch = main

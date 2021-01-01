@@ -282,12 +282,16 @@ git submodule update --init --recursive # If recursive submodules
 ```shell
 git submodule add -b <branch> [url_to_my_git_repo] <path/to/submodule>
 # Options:
-# [url_to_my_git_repo]: link to the repository to clone
 # -b <branch>: Branch you want to follow for this submodule. Warning: GitHub master becomes main since Oct. 2020
 # <path/to/submodule>: Name of the directory you want or leave empty by default
 
 # To initialize submodule configuration (optional)
 git submodule init
+
+# Save the tracked modifications in the parent folder
+git add .
+git commit -am "add submodule folder to the project"
+git push
 ```
 
 ### Convert an existing folder to submodule
@@ -385,7 +389,7 @@ git add .
 git commit -am "update the submodule tracked folder from parent folder"
 git push
 
-# Update parent folder by pushing modifications to the remote
+# Save the tracked modifications in the parent folder
 git add .
 git commit -am "update submodules folders"
 git push
@@ -402,7 +406,7 @@ git rm <path/to/submodule>
 # Note: <path/to/submodule> (no trailing slash)
 rm -rf .git/modules/<path/to/submodule>/
 
-# Update parent folder by pushing deletion to the remote
+# Save the tracked modifications in the parent folder
 git add .
 git commit -am "delete submodule folder + tracking"
 git push
@@ -410,7 +414,11 @@ git push
 
 ## Génération d'un CHANGELOG
 
+Cette partie est hébergée dans le projet en tant que [submodule](#gestion-des-submodules-en).
+
 Il est possible d'automatiser la génération d'un changelog grâce à un script Node ou d'autres outils en respectant des normes tel que [Conventionnal commits](https://www.conventionalcommits.org/ 'Conventionnal commits'). Repository personnel sur le sujet disponible [ici](https://github.com/Mushu-Tutorials/tuto-git-changelogs 'Automatic CHANGELOG update').
+
+Test lien vers le dossier : [tuto-git-changelogs](./tuto-git-changelogs)
 
 ## Lexique
 
