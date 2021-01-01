@@ -384,6 +384,11 @@ cd ../<parent/folder>
 git add .
 git commit -am "update the submodule tracked folder from parent folder"
 git push
+
+# Update parent folder by pushing modifications to the remote
+git add .
+git commit -am "update submodules folders"
+git push
 ```
  
 ### Delete a submodule
