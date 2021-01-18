@@ -26,6 +26,11 @@ _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou
 - [Fork (ou Fourcher)](#fork-ou-fourcher)
   - [Mettre à jour le projet Forked](#mettre-à-jour-le-projet-forked)
 - [Gestion des branches](#gestion-des-branches)
+  - [Commandes générales](#commandes-générales)
+    - [Créer des branches](#créer-des-branches)
+    - [Lister des branches](#lister-des-branches)
+    - [Renommer une branche](#renommer-une-branche)
+    - [Supprimer des branches](#supprimer-des-branches)
   - [GitFlow](#gitflow)
 - [Annuler un merge sur le Remote](#annuler-un-merge-sur-le-remote)
 - [Gestion des submodules (en)](#gestion-des-submodules-en)
@@ -175,7 +180,9 @@ Le **Fork** est un principe qui permet de _copier_ le projet d'une personne sur 
 
 [Source](https://nickymeuleman.netlify.app/blog/delete-git-branches 'Supprimer des branches')
 
-Créer des branches :
+### Commandes générales
+
+#### Créer des branches
 
 ```shell
 # Création d'une branche
@@ -186,7 +193,7 @@ git checkout <branch>
 git checkout -b <newBranch>
 ```
 
-Lister des branches :
+#### Lister des branches
 
 ```shell
 # Lister l'ensemble des branches en local
@@ -206,7 +213,33 @@ git branch -r --merged
 git branch -r --no-merged
 ```
 
-Supprimer des branches :
+#### Renommer une branche
+
+Suite à la nouvelle norme mise en place par GitHub, la branche **master** devient la branche **main**. Voici la procédure afin de renommer la branche master des anciens projets ([source](https://github.com/github/renaming), [predédure](https://stevenmortimer.com/5-steps-to-change-github-default-branch-from-master-to-main/)):
+
+```shell
+# Step 1 
+# create main branch locally, taking the history from master
+git branch -m master main
+
+# Step 2 
+# push the new local main branch to the remote repo (GitHub) 
+git push -u origin main
+
+# Step 3
+# switch the current HEAD to the main branch
+git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
+
+# Step 4
+# change the default branch on GitHub to main
+# https://docs.github.com/en/github/administering-a-repository/setting-the-default-branch
+
+# Step 5
+# delete the master branch on the remote
+git push origin --delete master
+```
+
+#### Supprimer des branches
 
 ```shell
 ## En local
