@@ -1,6 +1,6 @@
 # Git Tutorial
 
-*Submodule of [about-me](https://github.com/Mushu-Tutorials/about-me "about-me")*
+*Submodule of [about-me](https://github.com/MushuLeDragon/about-me "about-me")*
 
 Little tutorial to easily and quickly learn Git and its commands in french
 
