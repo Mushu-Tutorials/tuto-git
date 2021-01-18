@@ -1,5 +1,7 @@
 # Git Tutorial
 
+*Submodule of [about-me](https://github.com/Mushu-Tutorials/about-me "about-me")*
+
 Little tutorial to easily and quickly learn Git and its commands in french
 
 _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou Projet en français._
