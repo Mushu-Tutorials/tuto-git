@@ -42,6 +42,7 @@ _N.B. : J'utilise le terme Repository, Repositories ou Repo pour dire Dépôt ou
     - [Push modifications for a child folder](#push-modifications-for-a-child-folder)
     - [Delete a submodule](#delete-a-submodule)
 - [Génération d'un CHANGELOG](#génération-dun-changelog)
+- [Héberger sur Heroku](#héberger-sur-heroku)
 - [Lexique](#lexique)
 - [Sources](#sources)
 
@@ -454,6 +455,89 @@ Cette partie est hébergée dans le projet en tant que [submodule](#gestion-des-
 Il est possible d'automatiser la génération d'un changelog grâce à un script Node ou d'autres outils en respectant des normes tel que [Conventionnal commits](https://www.conventionalcommits.org/ 'Conventionnal commits'). Repository personnel sur le sujet disponible [ici](https://github.com/Mushu-Tutorials/tuto-git-changelogs 'Automatic CHANGELOG update').
 
 Test lien vers le dossier : [tuto-git-changelogs](./tuto-git-changelogs)
+
+## Héberger sur Heroku
+
+Documentation officielle [ici](https://devcenter.heroku.com/ "Heroku").
+
+Tuto Heroku [ici](https://github.com/MushuLeDragon/tuto-heroku-symfony).
+
+Source pour héberger les sous-dossiers sur Heroku [ici](https://medium.com/@shalandy/deploy-git-subdirectory-to-heroku-ea05e95fce1f).
+
+Héberger une application PHP sur Heroku :
+
+- Vérifier que les dossiers `bin/console` et `bin/phpunit` ne sont pas **gitignore**
+
+```shell
+# Step 1
+# Installer Heroku en fnction de son OS
+sudo snap install heroku --classic
+
+# Step 2
+# Log to Heroku
+heroku login
+
+# Step 3
+# Vérifier les prérequis : PHP, Composer, Git, Heroku
+php -v
+composer -V
+git --version
+heroku -v
+
+# Step 4
+# Aller dans le dossier du projet
+cd <my-project>
+
+# Step 5
+# Créer l'application en CLI sur Heroku, le nom <application_name> est facultatif
+heroku create <application_name>
+
+# Step 6
+# Configure some environments vars
+heroku config:set APP_ENV=prod
+
+# Step 7
+# Création de la base de données Postgres
+heroku addons:create heroku-postgresql:hobby-dev
+
+# Step 8
+# Ajout du script de compilation à composer.json pour migrer la BDD
+# "scripts": {
+#   "compile": [
+#     "php bin/console doctrine:migrations:migrate"
+#   ]
+# }
+
+# Step 9
+# Configuration de  la réécriture des URL avec Apache et le fichier .htaccess
+cd path/to/the/symfony/project
+composer require symfony/apache-pack
+
+# Step 10
+# Configuration du fichier Procfile
+# Symfony project : `echo 'web: heroku-php-apache2 public/' > Procfile`
+echo 'web: heroku-php-apache2 path/to/index/folder' > Procfile
+cd path/to/the/root/folder/project
+
+# Step 11
+# Sauvegarde des modifications sur le remote
+git add .
+git commit -am "Add Heroku configs"
+git push
+
+# Step 12
+# Step 12.1
+# Si le projet à host est à la racine (ATTENTION : sur GitHub la branche master est devenu la branche main)
+git push heroku main
+# Step 12.2
+# Si le projet se situe dans un sous dossier
+git subtree push --prefix path/to/subdirectory/ heroku main
+
+# Step
+# Pour voir les logs
+heroku logs
+heroku logs --tail
+```
 
 ## Lexique
 
